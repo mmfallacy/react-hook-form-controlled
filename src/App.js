@@ -1,10 +1,15 @@
-
+import {
+    Header,
+    Page,
+    FormSection
+} from './containers'
 
 function App() {
     return (
-        <div>
-            
-        </div>
+        <Page>
+            <Header />
+            <FormSection/>
+        </Page>
     )
 }
 
