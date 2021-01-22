@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import backgroundSVG from './background.svg'
 
 export const Page = styled.div`
