@@ -4,11 +4,19 @@ import {
     FormSection
 } from './containers'
 
+import {
+    TaskNameInput
+} from './components'
+
 function App() {
     return (
         <Page>
             <Header />
-            <FormSection/>
+            <form>
+                <FormSection>
+                    <TaskNameInput />
+                </FormSection>
+            </form>
         </Page>
     )
 }
