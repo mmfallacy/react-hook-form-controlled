@@ -5,7 +5,8 @@ import {
 } from './containers'
 
 import {
-    TaskNameInput
+    TaskNameInput,
+    TaskColorInput,
 } from './components'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <form>
                 <FormSection>
                     <TaskNameInput />
+                    <TaskColorInput name="Color" />
                 </FormSection>
             </form>
         </Page>
