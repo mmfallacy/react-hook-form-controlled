@@ -9,7 +9,7 @@ const FormSectionWrapper = styled.div`
 const FormSectionContainer = styled.div`
     width:100%;
     background-color: #87C5FF;
-    padding: 16px;
+    padding: 24px;
     border-radius:16px;
 
     & > *:not(:last-child){
