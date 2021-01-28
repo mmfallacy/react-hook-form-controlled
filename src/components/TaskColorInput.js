@@ -2,9 +2,7 @@ import {forwardRef} from 'react'
 import styled from 'styled-components/macro'
 
 const ColorSelectorContainer = styled.div`
-    padding:4px;
     display:flex;
-    background:red;
     
     & > *:not(:first-child){
         margin-left:8px;
@@ -22,10 +20,10 @@ const StyledColorSelector = styled.label`
     height:20px;
     width:20px;
     border-radius:20px;
-    background-color:blue;
+    background-color:${props=>props.color};
 
     ${HiddenColorRadio}:checked + &{
-        background-color:green;
+        box-shadow: 0 0 0 3px yellow
     }
 `
 
@@ -39,27 +37,34 @@ const RadioContainer = styled.div`
 `
 
 /** Color Selector Component */
-const ColorSelector = forwardRef((props, ref)=>
+const ColorSelector = forwardRef(({color, ...props}, ref)=>
     <RadioContainer>
 
         <HiddenColorRadio type="radio"
-        
             {...props}
             id={props.name + '-' + props.value}
-
         />
         
-        <StyledColorSelector htmlFor={props.name + '-' + props.value} />
+        <StyledColorSelector color={color} 
+            htmlFor={props.name + '-' + props.value} 
+        />
 
     </RadioContainer>
 )
 
-export const TaskColorInput = forwardRef((props,ref)=>
+export const TaskColorInput = forwardRef(({colors, ...props},ref)=>
     <ColorSelectorContainer>
-        <ColorSelector name={props.name} value="abcd"/>
-        <ColorSelector name={props.name} value="efgh"/>
-        <ColorSelector name={props.name} value="efgh7"/>
-        <ColorSelector name={props.name} value="efgh5"/>
-        <ColorSelector name={props.name} value="efgh2"/>
+
+        {colors.map((color, i)=>
+            <ColorSelector
+                key = {color}
+                color = {color}
+                value = {color}
+                {...props}
+
+                defaultChecked = {(i===0)}
+            />
+        )}
+
     </ColorSelectorContainer>
 )
