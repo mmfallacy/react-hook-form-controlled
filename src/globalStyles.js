@@ -11,6 +11,11 @@ export const GlobalStyles = createGlobalStyle`
 
     *{
         box-sizing: border-box;
+        font-family: Roboto;
         letter-spacing: .1px;
+    }
+
+    *:focus{
+        outline:none;
     }
 `
