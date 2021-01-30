@@ -18,6 +18,7 @@ const FormSectionContainer = styled.div`
 `
 
 const FormSectionHeader = styled.header`
+    margin-left:8px;
     margin-bottom: 16px;
     font-size:12px;
     font-weight:bolder;

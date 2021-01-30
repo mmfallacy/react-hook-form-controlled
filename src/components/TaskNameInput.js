@@ -22,5 +22,6 @@ export const TaskNameInput = forwardRef((props,ref)=>
         <StyledInput
             placeholder = "Task Name"
             ref={ref}
+            {...props}
         />
 )
