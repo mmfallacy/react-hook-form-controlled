@@ -1,5 +1,5 @@
 
-import {useState, useRef} from 'react';
+import {useState, useEffect, forwardRef} from 'react';
 import styled from 'styled-components/macro';
 
 const TimeInputContainer = styled.div`
@@ -24,7 +24,7 @@ const TimeInput = styled.input`
     }
 `
 
-export const TaskTimeInput = ()=>{
+export const TaskTimeInput = forwardRef(({header="Time Input", name},ref)=>{
 
     const [time, setTime] = useState([0,0,0,0])
 
@@ -45,17 +45,27 @@ export const TaskTimeInput = ()=>{
                 onKeyDown={handleKeyDown}
                 readOnly
             />
+
+            {/* Holds the TimeInput value in seconds*/}
+
+            <input type="hidden"
+                value={timeToSeconds(time)}
+                readOnly
+                ref={ref}
+                name={name}
+            />
+
             <TimeInputHeader>
-                Work Interval
+                {header}
             </TimeInputHeader>
         </TimeInputContainer>
     )
-}
+})
 
 const isValidKey = (keycode) => 
     (keycode >= 48 && keycode <= 57) || // 0-9
     (keycode >= 96 && keycode <= 105) || // 0-9 Numpad
-    (keycode == 8) // Backspace
+    (keycode === 8) // Backspace
 
 const displayTime = ([m1,m2,s1,s2]) => `${m1}${m2}:${s1}${s2}`
 
