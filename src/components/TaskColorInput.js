@@ -43,6 +43,7 @@ const ColorSelector = forwardRef(({color, ...props}, ref)=>
         <HiddenColorRadio type="radio"
             {...props}
             id={props.name + '-' + props.value}
+            ref={ref}
         />
         
         <StyledColorSelector color={color} 
