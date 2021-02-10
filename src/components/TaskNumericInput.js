@@ -41,6 +41,7 @@ export const TaskNumericInput = forwardRef(({header,defaultValue=0,...props},ref
                 defaultValue={defaultValue}
                 onKeyPress={handleKeyPress}
                 onFocus={e=>e.target.select()}
+                ref={ref}
             />
 
             <NumericInputHeader>

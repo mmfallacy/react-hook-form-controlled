@@ -63,6 +63,7 @@ export const TaskColorInput = forwardRef(({colors, ...props},ref)=>
                 {...props}
 
                 defaultChecked = {(i===0)}
+                ref={ref}
             />
         )}
 
