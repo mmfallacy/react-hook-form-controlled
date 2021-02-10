@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 
 const FormSectionWrapper = styled.div`
     width:100%;
-    height:200px;
+    min-height:200px;
 `
 
 const FormSectionContainer = styled.div`
